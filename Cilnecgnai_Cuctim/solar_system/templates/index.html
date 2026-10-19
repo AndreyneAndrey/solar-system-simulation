@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модель Солнечной Системы</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Панель управления -->
+    <div id="controls">
+        <div class="control-group">
+            <label for="zoomSlider">Масштаб (Зум): </label>
+            <input type="range" id="zoomSlider" min="1" max="500" value="30">
+            <span id="zoomValue">30x</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="speedSlider">Скорость времени: </label>
+            <input type="range" id="speedSlider" min="0" max="500" value="100">
+            <span id="speedValue">1x</span>
+        </div>
+
+        <button id="pauseBtn">Пауза</button>
+    </div>
+
+          <!-- Всплывающее окошко подсказки при наведении мыши -->
+    <div id="planetCard">
+        <h2 id="cardTitle">Название</h2>
+        <p id="cardDist">Расстояние: -</p>
+        <p id="cardRad">Радиус: -</p>
+        <p id="cardOrbitSpeed">Орбитальный коэф.: -</p>
+        <p id="cardLocalYears">Пройдено местных лет: -</p>
+        <p id="cardLocalDays">Текущие сутки планеты: -</p> <!-- Динамический счетчик дней -->
+    </div>
+
+
+
+
+
+    <canvas id="spaceCanvas"></canvas>
+
+    <script src="{{ url_for('static', filename='data.js') }}"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

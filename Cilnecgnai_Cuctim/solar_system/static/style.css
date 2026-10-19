@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #05050a; /* Возвращаем черный космос */
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+#spaceCanvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+#spaceCanvas:active {
+    cursor: grabbing;
+}
+
+/* Панель управления */
+#controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 15, 30, 0.85);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #334;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.control-group label {
+    min-width: 130px;
+    font-size: 14px;
+}
+
+#controls input[type="range"] {
+    cursor: pointer;
+    width: 150px;
+}
+
+/* Кнопка паузы */
+#pauseBtn {
+    background: #c1440e;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+#pauseBtn:hover {
+    background: #e05315;
+}
+
+#pauseBtn.paused {
+    background: #2f72da;
+}
+
+/* Маленькое окошко справки при НАВЕДЕНИИ */
+#planetCard {
+    position: absolute;
+    pointer-events: none; /* Чтобы окошко не мешало мышке двигаться */
+    background: rgba(10, 10, 20, 0.95);
+    border: 1px solid #556;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+    z-index: 100;
+    display: none; /* Показывается только через JS */
+}
+
+#planetCard h2 {
+    color: #ffcc00;
+    margin-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid #445;
+    padding-bottom: 3px;
+}
+
+#planetCard p {
+    font-size: 12px;
+    margin: 4px 0;
+    color: #ddd;
+}
