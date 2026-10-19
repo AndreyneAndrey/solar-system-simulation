@@ -23,3 +23,4 @@
    python app.py
    ```
 3. Откройте в браузере адрес: `http://127.0.0`
+<img width="1918" height="1079" alt="Screenshot_23" src="https://github.com/user-attachments/assets/ed0078ef-2493-490b-96c8-662f5746064a" />
